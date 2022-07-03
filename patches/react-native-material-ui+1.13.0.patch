@@ -1,0 +1,33 @@
+diff --git a/node_modules/react-native-material-ui/src/Toolbar/CenterElement.react.js b/node_modules/react-native-material-ui/src/Toolbar/CenterElement.react.js
+index 3342c96..88316ca 100644
+--- a/node_modules/react-native-material-ui/src/Toolbar/CenterElement.react.js
++++ b/node_modules/react-native-material-ui/src/Toolbar/CenterElement.react.js
+@@ -116,6 +116,7 @@ class CenterElement extends PureComponent {
+                     onChangeText={onSearchTextChange}
+                     onSubmitEditing={searchable.onSubmitEditing}
+                     placeholder={searchable.placeholder}
++                    placeholderTextColor={'#e9e9e9'}
+                     style={[styles.titleText, { marginLeft: 0 }]}
+                     underlineColorAndroid="transparent"
+                     value={searchValue}
+diff --git a/node_modules/react-native-material-ui/src/Toolbar/RightElement.react.js b/node_modules/react-native-material-ui/src/Toolbar/RightElement.react.js
+index 6b73d59..eef9dbc 100644
+--- a/node_modules/react-native-material-ui/src/Toolbar/RightElement.react.js
++++ b/node_modules/react-native-material-ui/src/Toolbar/RightElement.react.js
+@@ -12,7 +12,7 @@ const UIManager = NativeModules.UIManager;
+ const propTypes = {
+     isSearchActive: PropTypes.bool.isRequired,
+     searchValue: PropTypes.string.isRequired,
+-    searchable: PropTypes.object.isRequired,
++    searchable: PropTypes.object,
+     style: PropTypes.object,
+     size: PropTypes.number,
+     rightElement: PropTypes.any,
+@@ -25,6 +25,7 @@ const defaultProps = {
+     onRightElementPress: null,
+     size: null,
+     style: {},
++    searchable: null,
+ };
+ const contextTypes = {
+     uiTheme: PropTypes.object.isRequired,
